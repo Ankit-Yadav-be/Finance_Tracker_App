@@ -26,7 +26,7 @@ const BudgetForm = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/categories/all`)
+      .get(`https://finance-tracker-app-vgak.onrender.com/api/categories/all`)
       .then((res) => setCategories(res.data))
       .catch((err) => console.error("Failed to load categories", err));
   }, []);
@@ -49,7 +49,7 @@ const BudgetForm = () => {
 
     try {
       const response = await axios.post(
-        `http://localhost:8000/api/budgets/add`,
+        `https://finance-tracker-app-vgak.onrender.com/api/budgets/add`,
         formData
       );
       toast({

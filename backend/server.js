@@ -14,7 +14,11 @@ const _dirname = path.resolve();
 
 
 app.use(express.json());
-app.use(cors());
+const corsOptions = {
+  origin:"https://finance-tracker-app-vgak.onrender.com",
+  credentials:true
+}
+app.use(cors(corsOptions));
 
 app.use("/api/transactions", transactionRoutes);
 app.use("/api/categories", categoryRoutes);

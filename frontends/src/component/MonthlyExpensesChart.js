@@ -21,7 +21,7 @@ const MonthlyExpensesChart = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8000/api/transactions/all`
+          `https://finance-tracker-app-vgak.onrender.com/api/transactions/all`
         );
         const transactions = response.data;
 

@@ -35,7 +35,7 @@ const TransactionList = () => {
 
   const fetchTransactions = async () => {
     try {
-      const res = await axios.get(`http://localhost:8000/api/transactions/all`);
+      const res = await axios.get(`https://finance-tracker-app-vgak.onrender.com/api/transactions/all`);
       setTransactions(res.data);
     } catch (error) {
       toast({ title: 'Failed to load transactions', status: 'error', duration: 3000 });
@@ -48,7 +48,7 @@ const TransactionList = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:8000/api/transactions/delete/${id}`);
+      await axios.delete(`https://finance-tracker-app-vgak.onrender.com/api/transactions/delete/${id}`);
       toast({ title: 'Transaction deleted!', status: 'success', duration: 3000 });
       fetchTransactions();
     } catch (error) {
@@ -69,7 +69,7 @@ const TransactionList = () => {
 
   const handleUpdate = async () => {
     try {
-      await axios.put(`http://localhost:8000/api/transactions/update/${editingId}`, editForm, {
+      await axios.put(`https://finance-tracker-app-vgak.onrender.com/api/transactions/update/${editingId}`, editForm, {
         headers: { 'Content-Type': 'application/json' }
       });
       toast({ title: 'Transaction updated!', status: 'success', duration: 3000 });

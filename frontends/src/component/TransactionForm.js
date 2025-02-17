@@ -30,7 +30,7 @@ const TransactionForm = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/api/categories/all`);
+        const response = await axios.get(`https://finance-tracker-app-vgak.onrender.com/api/categories/all`);
         setCategories(response.data);
       } catch (error) {
         toast({
@@ -68,7 +68,7 @@ const TransactionForm = () => {
     setErrors({});
 
     try {
-      await axios.post(`http://localhost:8000/api/transactions/add`, formData);
+      await axios.post(`https://finance-tracker-app-vgak.onrender.com/api/transactions/add`, formData);
       toast({ title: 'Transaction added!', status: 'success', duration: 3000, isClosable: true });
       setFormData({ amount: '', date: '', description: '', category: '' });
     } catch (error) {

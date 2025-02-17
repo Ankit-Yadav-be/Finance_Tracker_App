@@ -13,8 +13,8 @@ const Dashboard = () => {
     const fetchData = async () => {
       try {
         const [transRes, catRes] = await Promise.all([
-          axios.get(`http://localhost:8000/api/transactions/all`),
-          axios.get(`http://localhost:8000/api/categories/all`),
+          axios.get(`https://finance-tracker-app-vgak.onrender.com/api/transactions/all`),
+          axios.get(`https://finance-tracker-app-vgak.onrender.com/api/categories/all`),
         ]);
         setTransactions(transRes.data);
         setCategories(catRes.data);

@@ -25,8 +25,8 @@ const SpendingInsights = () => {
   useEffect(() => {
     const fetchInsights = async () => {
       try {
-        const transactionsRes = await axios.get(`http://localhost:8000/api/transactions/all`);
-        const budgetsRes = await axios.get(`http://localhost:8000/api/budgets/all`);
+        const transactionsRes = await axios.get(`https://finance-tracker-app-vgak.onrender.com/api/transactions/all`);
+        const budgetsRes = await axios.get(`https://finance-tracker-app-vgak.onrender.com/api/budgets/all`);
 
         const transactions = transactionsRes.data || [];
         const budgets = budgetsRes.data || [];

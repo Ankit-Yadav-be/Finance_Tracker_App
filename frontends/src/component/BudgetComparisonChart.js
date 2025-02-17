@@ -9,10 +9,10 @@ const BudgetComparisonChart = () => {
   useEffect(() => {
     const fetchBudgetAndActualSpending = async () => {
       try {
-        const budgetResponse = await axios.get(`http://localhost:8000/api/budgets/all`);
+        const budgetResponse = await axios.get(`https://finance-tracker-app-vgak.onrender.com/api/budgets/all`);
         const budgets = budgetResponse.data;
 
-        const transactionResponse = await axios.get(`http://localhost:8000/api/transactions/all`);
+        const transactionResponse = await axios.get(`https://finance-tracker-app-vgak.onrender.com/api/transactions/all`);
         const transactions = transactionResponse.data;
 
         const actualSpendingMap = transactions.reduce((acc, tx) => {
